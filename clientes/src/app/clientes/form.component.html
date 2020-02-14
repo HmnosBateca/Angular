@@ -1,0 +1,60 @@
+<div class="card bg-dark text-white">
+  <div class="card-header">{{titulo}}</div>
+  <div class="card-body">
+    <!--<form (ngSubmit)="create()">-->
+    <form>
+      <div class="form-group row">
+        <label for="documento" class="col-form-label col-sm-2">Documento</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="cliente.documento" name="documento">
+        </div>
+      </div>
+    <div class="form-group row">
+        <label for="nombres" class="col-form-label col-sm-2">Nombres</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="cliente.nombres" name="nombres">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="apellidos" class="col-form-label col-sm-2">Apellidos</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="cliente.apellidos" name="apellidos">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="numero_contacto" class="col-form-label col-sm-2">Numero de Contacto</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="cliente.numero_contacto" name="numero_contacto">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="direccion" class="col-form-label col-sm-2">Dirección</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="cliente.direccion" name="direccion">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="correo" class="col-form-label col-sm-2">Correo</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="cliente.correo" name="correo">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="codigo_postal" class="col-form-label col-sm-2">Codigo Postal</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="cliente.codigo_postal" name="codigo_postal">
+        </div>
+      </div>
+
+        <div class="form-group row">
+           <div class="col-sm-6">
+             <button class="btn btn primary" role="button" (click)='create()' *ngIf="!cliente.id else elseBlock">Crear</button>
+             <ng-template #elseBlock>
+               <button class="btn btn primary" role="button" (click)='update()'>Editar</button>
+             </ng-template>
+           </div>
+      </div>
+
+    </form>
+  </div>
+</div>
